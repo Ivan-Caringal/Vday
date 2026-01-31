@@ -1,161 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Will You Be My Valentine?</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Will You Be My Valentine?</title>
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      background-color: #f9e3e3;
-    }
+      <style>
+        body {
+          margin: 0;
+          height: 100vh;
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          background-color: #f9e3e3;
+        }
 
-    /* FULLSCREEN GIF LAYER */
-    #bgGif {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;   
-      z-index: -1;
-      display: none;
-      opacity: 0.6;
-    }
+        /* FULLSCREEN GIF LAYER */
+        #bgGif {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;   
+          z-index: -1;
+          display: none;
+          opacity: 0.6;
+        }
 
-    .container {
-      text-align: center;
-     
-      padding: 30px;
-      border-radius: 16px;
-      z-index: 1;
-    }
+        .container {
+          text-align: center;
+          background: rgba(255,255,255,0.9);
+          padding: 30px;
+          border-radius: 16px;
+          z-index: 1;
+        }
 
-    h1 {
-      font-size: 2.5em;
-      color: #d32f2f;
-    }
+        h1 {
+          font-size: 2.5em;
+          color: #d32f2f;
+        }
 
-    button {
-      font-size: 1.5em;
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+        button {
+          font-size: 1.5em;
+          padding: 10px 20px;
+          margin: 10px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+        }
 
-    .yes-button {
-      background: #4caf50;
-      color: white;
-    }
+        .yes-button {
+          background: #4caf50;
+          color: white;
+        }
 
-    .no-button {
-      background: #f44336;
-      color: white;
-      position: relative;
-    }
+        .no-button {
+          background: #f44336;
+          color: white;
+          position: relative;
+        }
 
-    .gif_container img {
-      max-width: 280px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
+        .gif_container img {
+          max-width: 280px;
+          border-radius: 12px;
+          margin-top: 20px;
+        }
+      </style>
+    </head>
 
-<body>
+    <body>
 
-  <!-- Background GIF layer -->
-  <img id="bgGif" />
+      <!-- Background GIF layer -->
+      <img id="bgGif" />
 
-  <div class="container">
-    <h1 id="title">Will you be my Valentine Joanna Franchesca "toyoin" Malaluan  ?</h1>
+      <div class="container">
+        <h1 id="title">Will you be my Valentine Joanna Franchesca "toyoin" Malaluan  ?</h1>
 
-    <div class="buttons">
-      <button class="yes-button" onclick="handleYesClick()">Yes</button>
-      <button class="no-button" id="noBtn" onmouseover="moveButton()">No</button>
-    </div>
+        <div class="buttons">
+          <button class="yes-button" onclick="handleYesClick()">Yes</button>
+          <button class="no-button" id="noBtn" onmouseover="moveButton()">No</button>
+        </div>
 
-    <div class="gif_container">
-      <img id="gif"
-        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif">
-    </div>
-  </div>
+        <div class="gif_container">
+          <img id="gif"
+            src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif">
+        </div>
+      </div>
 
-  <script>
-    const funnyTexts = [
-      "Nope? 😭",
-      "Try YES 😂",
-      "You can't escape 😆",
-      "Be nice 🥺",
-      "Press YES pls 💖"
-    ];
+      <script>
+        const funnyTexts = [
+          "Nope? 😭",
+          "Try YES 😂",
+          "You can't escape 😆",
+          "Be nice 🥺",
+          "Press YES pls 💖"
+        ];
 
-    const bgGifs = [
-      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGM3bWt4YzQ4YmNmYmVzbWtmM2FqMWl0eGJxdGZyZ205aXgyeGZwMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3mTrw0WvK4d4eCMsOI/giphy.gif",
-      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGM3bWt4YzQ4YmNmYmVzbWtmM2FqMWl0eGJxdGZyZ205aXgyeGZwMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/d37mEpcaGP3pudPoho/giphy.gif",
-      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGM3bWt4YzQ4YmNmYmVzbWtmM2FqMWl0eGJxdGZyZ205aXgyeGZwMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/12vXrAZhMazV7y/giphy.gif"
-    ];
+        const bgGifs = [
+          "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGM3bWt4YzQ4YmNmYmVzbWtmM2FqMWl0eGJxdGZyZ205aXgyeGZwMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3mTrw0WvK4d4eCMsOI/giphy.gif",
+          "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGM3bWt4YzQ4YmNmYmVzbWtmM2FqMWl0eGJxdGZyZ205aXgyeGZwMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/d37mEpcaGP3pudPoho/giphy.gif",
+          "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGM3bWt4YzQ4YmNmYmVzbWtmM2FqMWl0eGJxdGZyZ205aXgyeGZwMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/12vXrAZhMazV7y/giphy.gif"
+        ];
 
-    const emojiGif = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGw3ZDd6bWdpbmdzbTk3cXl6aDFqOTZqNnZ4bnU4b21vaTNob3FzbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/vPzbDN4rBxuvtpSpzF/giphy.gif";
+        const emojiGif = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGw3ZDd6bWdpbmdzbTk3cXl6aDFqOTZqNnZ4bnU4b21vaTNob3FzbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/vPzbDN4rBxuvtpSpzF/giphy.gif";
 
-    function handleYesClick() {
-      document.getElementById("title").innerText = "Hehe Feb 14 2026, Ortigas Mega Mall 😘";
-      document.getElementById("gif").src =
-        "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif";
-      document.querySelector(".buttons").style.display = "none";
+        function handleYesClick() {
+          document.getElementById("title").innerText = "Hehe Feb 14 2026, Ortigas Mega Mall  😘";
+          document.getElementById("gif").src =
+            "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif";
+          document.querySelector(".buttons").style.display = "none";
 
-      const bg = document.getElementById("bgGif");
-      bg.style.display = "block";
+          const bg = document.getElementById("bgGif");
+          bg.style.display = "block";
 
-      let i = 0;
-      bg.src = bgGifs[i];
+          let i = 0;
+          bg.src = bgGifs[i];
 
-      setInterval(() => {
-        i = (i + 1) % bgGifs.length;
-        bg.src = bgGifs[i];
-      }, 2000);
-    }
+          setInterval(() => {
+            i = (i + 1) % bgGifs.length;
+            bg.src = bgGifs[i];
+          }, 2000);
+        }
 
-    function moveButton() {
-      const btn = document.getElementById("noBtn");
+        function moveButton() {
+          const btn = document.getElementById("noBtn");
 
-      // Move button randomly inside viewport
-      const maxX = window.innerWidth - btn.offsetWidth;
-      const maxY = window.innerHeight - btn.offsetHeight;
-      btn.style.position = "absolute";
-      btn.style.left = Math.random() * maxX + "px";
-      btn.style.top = Math.random() * maxY + "px";
+          // Move button randomly inside viewport
+          const maxX = window.innerWidth - btn.offsetWidth;
+          const maxY = window.innerHeight - btn.offsetHeight;
+          btn.style.position = "absolute";
+          btn.style.left = Math.random() * maxX + "px";
+          btn.style.top = Math.random() * maxY + "px";
 
-      // Change text randomly
-      const randomIndex = Math.floor(Math.random() * funnyTexts.length);
-      btn.innerText = funnyTexts[randomIndex];
+          // Change text randomly
+          const randomIndex = Math.floor(Math.random() * funnyTexts.length);
+          btn.innerText = funnyTexts[randomIndex];
 
-      // Create emoji GIF at random position
-      const emoji = document.createElement("img");
-      emoji.src = emojiGif;
-      emoji.style.position = "absolute";
-      emoji.style.width = "60px";
-      emoji.style.height = "60px";
-      emoji.style.left = Math.random() * (window.innerWidth - 60) + "px";
-      emoji.style.top = Math.random() * (window.innerHeight - 60) + "px";
-      emoji.style.pointerEvents = "none"; // so it doesn’t block button
-      document.body.appendChild(emoji);
+          // Create emoji GIF at random position
+          const emoji = document.createElement("img");
+          emoji.src = emojiGif;
+          emoji.style.position = "absolute";
+          emoji.style.width = "60px";
+          emoji.style.height = "60px";
+          emoji.style.left = Math.random() * (window.innerWidth - 60) + "px";
+          emoji.style.top = Math.random() * (window.innerHeight - 60) + "px";
+          emoji.style.pointerEvents = "none"; // so it doesn’t block button
+          document.body.appendChild(emoji);
 
-      // Remove the emoji after 1.5 seconds
-      setTimeout(() => {
-        emoji.remove();
-      }, 1500);
-    }
-  </script>
+          // Remove the emoji after 1.5 seconds
+          setTimeout(() => {
+            emoji.remove();
+          }, 1500);
+        }
+      </script>
 
-</body>
-</html>
+    </body>
+    </html>
